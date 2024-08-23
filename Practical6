@@ -1,0 +1,43 @@
+/*Implement a program to handle Arithmetic exception, Array Index Out of Bounds. The user enters
+two numbers Num1 and Num2. The division of Num1 and Num2 is displayed. If Num1 and Num2
+are not integers, the program would throw a Number Format Exception. If Num2 were zero, the
+program would throw an Arithmetic Exception. Display the exception.*/
+
+
+package exceptionhandling;
+import java.util.*;
+public class ExceptionHandling {
+	public static void main(String[]args) {
+		Scanner sc=new Scanner(System.in);
+		
+//below code is for ArithmeticException
+	try{
+		int num1;
+		int num2;
+		System.out.println("enter the first num:");
+		num1=sc.nextInt();
+		System.out.println("enter the second num:");
+		num2=sc.nextInt();
+		int result = num1 / num2;
+        System.out.println("The result of " + num1 + " divided by " + num2 + " is " + result);
+	}
+	catch(ArithmeticException a) {
+			System.out.println(a);
+			System.out.println("Not divisible by zero");
+	}
+		
+		// below  code is for ArrayIndexOutOfBoundsException
+	try {
+		int[] arr= new int[5];
+		for(int i=0;i<=6;i++) {
+			System.out.println(arr[i]=i);
+		}
+	}
+	catch(ArrayIndexOutOfBoundsException b) {
+		System.out.println(b);
+		System.out.println("index not found");		
+	}	
+		
+	}
+
+}
